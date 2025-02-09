@@ -1,0 +1,143 @@
+Microsoft (R) Macro Assembler Version 14.41.34120.0	    12/13/24 10:29:55
+asm3.asm						     Page 1 - 1
+
+
+				.586
+				.model flat,stdcall
+
+				includelib kernel32.lib
+				includelib user32.lib
+
+				ExitProcess PROTO :DWORD
+				MessageBoxA PROTO :DWORD, :DWORD, :DWORD, :DWORD
+
+				.stack 4096
+
+ 00000000			.data
+ 00000000 74 72 75 65 00	    str1 BYTE "true",0
+ 00000005 66 61 6C 73 65	    str2 BYTE "false",0
+	   00
+ 0000000B 50 72 6F 67 72	    str3 BYTE "Program",0
+	   61 6D 00
+
+ 00000013 10 20 30 40		    myBytes BYTE 10h, 20h, 30h, 40h
+ 00000017 008A 003B 0044	    myWords WORD 8ah, 3Bh, 44h, 5Fh, 99h
+	   005F 0099
+ 00000021 00000001		    myDoubles DWORD 1, 2, 3, 4, 5, 6
+	   00000002
+	   00000003
+	   00000004
+	   00000005
+	   00000006
+ 00000039 00000021 R		    myPointer DWORD myDoubles
+
+ 0000003D 00000001		    mass DWORD 1, 0, 3, 4, 5, 6, 7
+	   00000000
+	   00000003
+	   00000004
+	   00000005
+	   00000006
+	   00000007
+
+ 00000000			.code
+
+ 00000000			main PROC
+
+ 00000000  BE 00000017 R	    mov ESI, OFFSET myWords
+ 00000005  66| 8B 06		    mov ax, [ESI + 0]
+ 00000008  66| 8B 5E 02		    mov bx, [ESI + 2]
+
+ 0000000C  BE 00000000		mov ESI, 0
+ 00000011  B8 00000000		mov EAX, 0
+ 00000016  B9 00000007		mov ECX, 7
+
+ 0000001B			sum_loop:
+ 0000001B  03 86 0000003D R	    add eax, mass[esi]    
+ 00000021  83 C6 01		    add esi,1
+
+ 00000024  E2 F5		    loop sum_loop
+				    
+ 00000026  B9 00000007		mov ECX, 7
+ 0000002B  BE 00000000		mov ESI, 0
+
+ 00000030			check:
+ 00000030  83 BE 0000003D R		cmp [mass + ESI], 0 
+	   00
+ 00000037  74 0C			je zero
+ 00000039  83 C6 01			add ESI, 1
+
+ 0000003C  E2 F2			loop check
+
+ 0000003E  BB 00000000			mov EBX, 0
+ 00000043  EB 1A			jmp no_zero
+
+
+ 00000045			zero:
+ 00000045  BB 00000000		mov EBX, 0
+					INVOKE MessageBoxA, 0, OFFSET str1, OFFSET str3, 1
+ 0000005D  EB 15			jmp endprogram
+
+ 0000005F			no_zero:
+					INVOKE MessageBoxA, 0, OFFSET str2, OFFSET str3, 1
+ 00000072  EB 00			jmp endprogram
+
+ 00000074			endprogram:
+ 00000074  6A 00		    push 0
+ 00000076  E8 00000000 E	    call ExitProcess
+
+ 0000007B			main ENDP
+				END main
+Microsoft (R) Macro Assembler Version 14.41.34120.0	    12/13/24 10:29:55
+asm3.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000059 Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000007B Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+ExitProcess  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+MessageBoxA  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000007B Public STDCALL
+  sum_loop . . . . . . . . . . .	L Near	 0000001B _TEXT	
+  check  . . . . . . . . . . . .	L Near	 00000030 _TEXT	
+  zero . . . . . . . . . . . . .	L Near	 00000045 _TEXT	
+  no_zero  . . . . . . . . . . .	L Near	 0000005F _TEXT	
+  endprogram . . . . . . . . . .	L Near	 00000074 _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000003h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+mass . . . . . . . . . . . . . .	DWord	 0000003D _DATA	
+myBytes  . . . . . . . . . . . .	Byte	 00000013 _DATA	
+myDoubles  . . . . . . . . . . .	DWord	 00000021 _DATA	
+myPointer  . . . . . . . . . . .	DWord	 00000039 _DATA	
+myWords  . . . . . . . . . . . .	Word	 00000017 _DATA	
+str1 . . . . . . . . . . . . . .	Byte	 00000000 _DATA	
+str2 . . . . . . . . . . . . . .	Byte	 00000005 _DATA	
+str3 . . . . . . . . . . . . . .	Byte	 0000000B _DATA	
+
+	   0 Warnings
+	   0 Errors

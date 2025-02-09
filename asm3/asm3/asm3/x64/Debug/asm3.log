@@ -1,0 +1,10 @@
+﻿  Assembling asm3.asm...
+asm3.asm(1): error A2008: syntax error : .
+asm3.asm(2): error A2008: syntax error : .
+asm3.asm(9): error A2008: syntax error : .
+asm3.asm(14): error A2044: invalid character in file
+asm3.asm(44): error A2008: syntax error : main
+asm3.asm(44): error A2088: END directive required at end of file
+asm3.asm(13): error A2166: structure field expected
+asm3.asm(15): error A2006: undefined symbol : myDoubles
+D:\VisualStudio\community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: выход из команды "ml64.exe /c /nologo /Zi /Fo"x64\Debug\asm3.obj" /W3 /errorReport:prompt  /Taasm3.asm" с кодом "1".
