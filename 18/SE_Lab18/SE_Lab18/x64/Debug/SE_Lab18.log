@@ -1,0 +1,39 @@
+﻿  Error.cpp
+  FST.cpp
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\FST.cpp(86,23): warning C4267: инициализация: преобразование из "size_t" в "short"; возможна потеря данных
+  GRB.cpp
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\Rules.h(7,9): warning C4005: NS: изменение макроопределения
+  (компиляция исходного файла "GRB.cpp")
+      d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\GRB.h(3,9):
+      см. предыдущее определение "NS"
+  
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\Rules.h(8,9): warning C4005: TS: изменение макроопределения
+  (компиляция исходного файла "GRB.cpp")
+      d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\GRB.h(4,9):
+      см. предыдущее определение "TS"
+  
+  In.cpp
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\In.cpp(1,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\In.cpp(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\In.cpp(49,21): warning C4244: =: преобразование "wchar_t" в "unsigned char", возможна потеря данных
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\In.cpp(52,11): warning C4244: =: преобразование "wchar_t" в "char", возможна потеря данных
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\In.cpp(73,13): warning C4244: =: преобразование "wchar_t" в "char", возможна потеря данных
+  IT.cpp
+  Lexer.cpp
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\LT.h(32,21): warning C4838: Преобразование из "unsigned int" в "int" требует сужающего преобразования.
+  (компиляция исходного файла "Lexer.cpp")
+  
+  Log.cpp
+  LT.cpp
+  MFST.cpp
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\MFST.cpp(90,7): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE4"
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\MFST.cpp(108,5): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE4"
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\MFST.cpp(115,4): warning C4002: слишком много аргументов для вызова макроса, подобного функции, "MFST_TRACE4"
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\MFST.cpp(247,66): warning C4267: =: преобразование из "size_t" в "short"; возможна потеря данных
+  Out.cpp
+  Parm.cpp
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\Parm.cpp(50,19): warning C4267: инициализация: преобразование из "size_t" в "short"; возможна потеря данных
+d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\SE_Lab18\Parm.cpp(61,19): warning C4267: инициализация: преобразование из "size_t" в "short"; возможна потеря данных
+  SE_Lab18.cpp
+  Создание кода...
+  SE_Lab18.vcxproj -> d:\Users\ggsen\Рабочий стол\лабы (3сем)\КПО\18\SE_Lab18\x64\Debug\SE_Lab18.exe
